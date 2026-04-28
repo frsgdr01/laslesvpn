@@ -1,0 +1,151 @@
+.testimonials {
+  padding: 80px 0;
+  background: #FFFFFF;
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+    h2 { 
+      font-size: 35px; 
+      color: #0B132A; 
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 20px;
+    }
+    p { 
+      color: #4F5665; 
+      max-width: 555px; 
+      margin: 0 auto; 
+      line-height: 30px;
+    }
+  }
+
+  .testimonials-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: hidden; 
+  }
+
+  .testimonials-wrapper {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 30px;
+    margin-bottom: 60px;
+    transition: transform 0.5s ease-in-out; 
+    will-change: transform;
+  }
+
+  .testimonial-item {
+    flex: 0 0 400px; 
+    width: 400px;
+    min-width: 0; 
+  }
+
+  .testimonial-card {
+    background: #FFFFFF;
+    border: 2px solid #EEEFF2;
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+
+    &.active {
+      border-color: #F53838;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img { 
+          width: 50px; 
+          height: 50px; 
+          border-radius: 50%; 
+          object-fit: cover;
+        }
+        .user-details {
+          strong { display: block; color: #0B132A; font-size: 18px; }
+          span { color: #4F5665; font-size: 14px; }
+        }
+      }
+      .rating { 
+        color: #0B132A; 
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &::after { 
+          content: '★'; 
+          color: #FEA250; 
+        } 
+      }
+    }
+
+    p { 
+      line-height: 26px; 
+      color: #0B132A; 
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  .testimonials-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .custom-pagination {
+      display: flex;
+      gap: 15px;
+      .dot { 
+        width: 15px; 
+        height: 15px; 
+        background: #DDE0E4; 
+        border-radius: 50%; 
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .dot.active { 
+        width: 45px; 
+        background: #F53838; 
+        border-radius: 10px; 
+      }
+    }
+
+    .custom-buttons {
+      display: flex;
+      gap: 20px;
+      .btn {
+        width: 60px; 
+        height: 60px; 
+        border: 2px solid #F53838; 
+        border-radius: 50%;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        color: #F53838; 
+        font-size: 24px; 
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+        
+        &.next { 
+          background: #F53838; 
+          color: #fff; 
+        }
+      }
+    }
+  }
+}

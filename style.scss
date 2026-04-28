@@ -1,0 +1,32 @@
+$red: #F53838;
+$black: #0B132A;
+$grey: #4F5665;
+$white: #FFFFFF;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: $white;
+  color: $black;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@import 'header';
+@import 'hero';
+@import 'stats';
+@import 'features';
+@import 'plans';
+@import 'network';
+@import 'testimonials';
+@import 'subscribe';
+@import 'footer';

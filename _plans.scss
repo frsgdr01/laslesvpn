@@ -1,0 +1,122 @@
+.plans {
+  padding: 80px 0;
+  text-align: center;
+
+  .section-title {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $black;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    color: $grey;
+    margin-bottom: 60px;
+  }
+
+  .plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .plan-card {
+    background: $white;
+    border: 2px solid #EEEFF2;
+    border-radius: 10px;
+    padding: 50px 30px;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $red;
+      box-shadow: 0 50px 100px rgba(13, 16, 37, 0.05);
+
+      .plan-footer .btn-select {
+        background: $red;
+        color: $white;
+        border-color: $red;
+        box-shadow: 0 15px 30px rgba(245, 56, 56, 0.35);
+      }
+    }
+
+    .plan-img {
+      margin-bottom: 30px;
+      height: 165px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-height: 100%;
+        width: auto;
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: $black;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 50px;
+      flex-grow: 1;
+      text-align: left;
+
+      li {
+        font-size: 14px;
+        color: $grey;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &::before {
+          content: "";
+          width: 14px;
+          height: 10px;
+          background-image: url('../img/check-small.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .plan-footer {
+      .price {
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: $black;
+        
+        span {
+          font-weight: 400;
+          color: $grey;
+        }
+      }
+
+      .btn-select {
+        background: transparent;
+        border: 2px solid $red;
+        color: $red;
+        padding: 13px 45px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: 'Rubik', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
