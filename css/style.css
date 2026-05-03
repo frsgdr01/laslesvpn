@@ -21,13 +21,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
+  padding: clamp(15px, 2.5vw, 25px) 0;
   position: relative;
 }
 .header .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(5px, 1vw, 10px);
   font-size: 20px;
   color: #0B132A;
   text-decoration: none;
@@ -42,7 +42,7 @@ body {
 .header .nav-menu ul {
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: clamp(20px, 3vw, 40px);
 }
 .header .nav-menu ul li a {
   text-decoration: none;
@@ -59,7 +59,7 @@ body {
 .header .auth-buttons {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: clamp(15px, 2vw, 30px);
 }
 .header .auth-buttons .sign-in {
   background: none;
@@ -104,6 +104,9 @@ body {
 }
 
 @media (max-width: 992px) {
+  .header {
+    padding: 25px 20px;
+  }
   .header .burger {
     display: flex;
   }
@@ -122,13 +125,13 @@ body {
   .header .nav-menu ul {
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: clamp(15px, 4vw, 25px);
   }
   .header .nav-menu .auth-buttons-mobile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, 3vw, 20px);
     margin-top: 30px;
   }
   .header .nav-menu .auth-buttons-mobile .sign-in {
@@ -164,17 +167,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0;
-  gap: 30px;
+  padding: clamp(30px, 5vw, 50px) 0;
+  gap: clamp(20px, 4vw, 30px);
 }
 .hero .hero-content {
   flex: 1;
 }
 .hero .hero-content h1 {
-  font-size: 50px;
+  font-size: clamp(32px, 5vw, 50px);
   color: #0B132A;
-  line-height: 70px;
-  margin-bottom: 20px;
+  line-height: clamp(42px, 6vw, 70px);
+  margin-bottom: clamp(15px, 2vw, 20px);
 }
 .hero .hero-content h1 strong {
   font-weight: 700;
@@ -183,13 +186,13 @@ body {
   font-size: 16px;
   color: #4F5665;
   line-height: 30px;
-  margin-bottom: 50px;
+  margin-bottom: clamp(30px, 5vw, 50px);
   max-width: 550px;
 }
 .hero .hero-content .btn-get-started {
   background-color: #F53838;
   color: #FFFFFF;
-  padding: 17px 77px;
+  padding: 17px clamp(40px, 6vw, 77px);
   border: none;
   border-radius: 10px;
   font-weight: 700;
@@ -211,6 +214,36 @@ body {
   max-width: 610px;
   height: auto;
 }
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero .hero-content h1 {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  .hero .hero-content p {
+    order: 3;
+    margin: 20px auto 30px;
+  }
+  .hero .hero-content .btn-get-started {
+    order: 4;
+  }
+  .hero .hero-image {
+    display: contents;
+  }
+  .hero .hero-image img {
+    order: 2;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
 
 .stats {
   margin-top: 50px;
@@ -228,22 +261,26 @@ body {
 .stats .stats-box .stat-item {
   display: flex;
   align-items: center;
-  gap: 36px;
-  flex: 1;
   justify-content: center;
+  flex: 1;
+  gap: 36px;
 }
 .stats .stats-box .stat-item .stat-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 55px;
+  flex-shrink: 0;
 }
 .stats .stats-box .stat-item .stat-icon img {
-  width: 55px;
+  width: 100%;
   height: auto;
 }
 .stats .stats-box .stat-item .stat-info {
   display: flex;
   flex-direction: column;
+  width: 110px;
+  flex-shrink: 0;
 }
 .stats .stats-box .stat-item .stat-info strong {
   font-size: 25px;
@@ -280,8 +317,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 0;
-  gap: 50px;
+  padding: clamp(40px, 8vw, 80px) 0;
+  gap: clamp(30px, 5vw, 50px);
 }
 .features .features-image {
   flex: 1;
@@ -293,12 +330,14 @@ body {
 }
 .features .features-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .features .features-content h2 {
-  font-size: 35px;
+  font-size: clamp(24px, 4vw, 35px);
   color: #0B132A;
-  line-height: 50px;
-  margin-bottom: 20px;
+  line-height: clamp(34px, 5vw, 50px);
+  margin-bottom: clamp(10px, 2vw, 20px);
   font-weight: 700;
 }
 .features .features-content p {
@@ -330,13 +369,47 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media (max-width: 992px) {
+  .features {
+    flex-direction: column;
+  }
+  .features .features-content {
+    align-items: center;
+    text-align: center;
+  }
+  .features .features-content h2 {
+    order: 1;
+  }
+  .features .features-content p {
+    order: 2;
+  }
+  .features .features-content .features-list {
+    order: 3;
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .features .features-content .features-list li {
+    justify-content: flex-start;
+  }
+  .features .features-image {
+    order: 4;
+    margin-top: clamp(20px, 5vw, 30px);
+    display: flex;
+    justify-content: center;
+  }
+  .features .features-image img {
+    max-width: 70%;
+  }
+}
 
 .plans {
-  padding: 80px 0;
+  padding: clamp(40px, 8vw, 80px) 0;
   text-align: center;
 }
 .plans .section-title {
-  font-size: 35px;
+  font-size: clamp(28px, 4vw, 35px);
   font-weight: 700;
   margin-bottom: 20px;
   color: #0B132A;
@@ -344,37 +417,38 @@ body {
 .plans .section-subtitle {
   font-size: 16px;
   color: #4F5665;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 6vw, 60px);
 }
 .plans .plans-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: clamp(20px, 3vw, 30px);
   flex-wrap: wrap;
 }
 .plans .plan-card {
   background: #FFFFFF;
   border: 2px solid #EEEFF2;
   border-radius: 10px;
-  padding: 50px 30px;
+  padding: clamp(30px, 5vw, 50px) clamp(20px, 3vw, 30px);
   width: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-.plans .plan-card:hover {
+.plans .plan-card:hover, .plans .plan-card.active {
   border-color: #F53838;
   box-shadow: 0 50px 100px rgba(13, 16, 37, 0.05);
 }
-.plans .plan-card:hover .plan-footer .btn-select {
+.plans .plan-card:hover .plan-footer .btn-select, .plans .plan-card.active .plan-footer .btn-select {
   background: #F53838;
   color: #FFFFFF;
   border-color: #F53838;
   box-shadow: 0 15px 30px rgba(245, 56, 56, 0.35);
 }
 .plans .plan-card .plan-img {
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 3vw, 30px);
   height: 165px;
   display: flex;
   align-items: center;
@@ -387,13 +461,13 @@ body {
 .plans .plan-card h3 {
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 3vw, 30px);
   color: #0B132A;
 }
 .plans .plan-card .plan-features {
   list-style: none;
   padding: 0;
-  margin-bottom: 50px;
+  margin-bottom: clamp(30px, 5vw, 50px);
   flex-grow: 1;
   text-align: left;
 }
@@ -403,7 +477,7 @@ body {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
 }
 .plans .plan-card .plan-features li::before {
   content: "";
@@ -428,7 +502,7 @@ body {
   background: transparent;
   border: 2px solid #F53838;
   color: #F53838;
-  padding: 13px 45px;
+  padding: 13px clamp(30px, 4vw, 45px);
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
@@ -436,16 +510,25 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+@media (max-width: 992px) {
+  .plans {
+    padding: 50px 20px;
+  }
+  .plans .plan-card {
+    width: 100%;
+    max-width: 330px;
+  }
+}
 
 .network {
-  padding: 80px 0;
+  padding: clamp(40px, 8vw, 80px) 0;
   text-align: center;
 }
 .network .network-header {
-  margin-bottom: 100px;
+  margin-bottom: clamp(50px, 10vw, 100px);
 }
 .network .network-header h2 {
-  font-size: 35px;
+  font-size: clamp(24px, 4vw, 35px);
   font-weight: 700;
   color: #0B132A;
   margin-bottom: 20px;
@@ -458,7 +541,7 @@ body {
   line-height: 30px;
 }
 .network .network-map {
-  margin-bottom: 80px;
+  margin-bottom: clamp(40px, 8vw, 80px);
 }
 .network .network-map img {
   width: 100%;
@@ -470,13 +553,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 60px 80px;
+  gap: clamp(30px, 5vw, 60px) clamp(40px, 8vw, 80px);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 .network .network-logos img {
-  height: 60px;
+  height: clamp(40px, 6vw, 60px);
   width: auto;
   flex-shrink: 0;
   -o-object-fit: contain;
@@ -493,18 +576,18 @@ body {
 }
 
 .testimonials {
-  padding: 80px 0;
+  padding: clamp(40px, 8vw, 80px) 0;
   background: #FFFFFF;
 }
 .testimonials .testimonials-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 6vw, 60px);
 }
 .testimonials .testimonials-header h2 {
-  font-size: 35px;
+  font-size: clamp(26px, 4vw, 35px);
   color: #0B132A;
   font-weight: 700;
-  line-height: 50px;
+  line-height: clamp(36px, 5vw, 50px);
   margin-bottom: 20px;
 }
 .testimonials .testimonials-header p {
@@ -512,6 +595,7 @@ body {
   max-width: 555px;
   margin: 0 auto;
   line-height: 30px;
+  font-size: 16px;
 }
 .testimonials .testimonials-container {
   max-width: 1140px;
@@ -522,21 +606,20 @@ body {
 .testimonials .testimonials-wrapper {
   display: flex;
   justify-content: flex-start;
-  gap: 30px;
-  margin-bottom: 60px;
+  gap: clamp(15px, 3vw, 30px);
+  margin-bottom: clamp(30px, 6vw, 60px);
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
 .testimonials .testimonial-item {
-  flex: 0 0 400px;
-  width: 400px;
+  flex: 0 0 clamp(300px, 80vw, 400px);
   min-width: 0;
 }
 .testimonials .testimonial-card {
   background: #FFFFFF;
   border: 2px solid #EEEFF2;
   border-radius: 10px;
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -554,7 +637,7 @@ body {
 .testimonials .testimonial-card .card-header .user-info {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
 }
 .testimonials .testimonial-card .card-header .user-info img {
   width: 50px;
@@ -578,6 +661,7 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+  font-size: 16px;
 }
 .testimonials .testimonial-card .card-header .rating::after {
   content: "★";
@@ -593,6 +677,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .testimonials .testimonials-controls .custom-pagination {
   display: flex;
@@ -607,44 +693,53 @@ body {
   transition: 0.3s;
 }
 .testimonials .testimonials-controls .custom-pagination .dot.active {
-  width: 45px;
+  width: clamp(30px, 5vw, 45px);
   background: #F53838;
   border-radius: 10px;
 }
 .testimonials .testimonials-controls .custom-buttons {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
 }
 .testimonials .testimonials-controls .custom-buttons .btn {
-  width: 60px;
-  height: 60px;
+  width: clamp(50px, 6vw, 60px);
+  height: clamp(50px, 6vw, 60px);
+  background: transparent;
   border: 2px solid #F53838;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F53838;
-  font-size: 24px;
   cursor: pointer;
   transition: 0.3s;
 }
-.testimonials .testimonials-controls .custom-buttons .btn:hover {
-  opacity: 0.7;
+.testimonials .testimonials-controls .custom-buttons .btn img {
+  width: 20px;
+  filter: brightness(0) saturate(100%) invert(35%) sepia(87%) saturate(4529%) hue-rotate(345deg) brightness(101%) contrast(94%);
+  transition: 0.3s;
 }
-.testimonials .testimonials-controls .custom-buttons .btn.next {
+.testimonials .testimonials-controls .custom-buttons .btn:hover {
   background: #F53838;
-  color: #fff;
+}
+.testimonials .testimonials-controls .custom-buttons .btn:hover img {
+  filter: brightness(0) invert(1);
+}
+@media (max-width: 576px) {
+  .testimonials .testimonials-controls {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .subscribe {
   position: relative;
   z-index: 10;
-  margin-bottom: -100px;
+  margin-bottom: clamp(-150px, -10vw, -100px);
 }
 .subscribe .subscribe-box {
   background: #FFFFFF;
   border-radius: 10px;
-  padding: 58px 70px;
+  padding: clamp(30px, 5vw, 58px) clamp(20px, 6vw, 70px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -652,10 +747,10 @@ body {
 }
 .subscribe .subscribe-box .subscribe-text h2 {
   color: #0B132A;
-  font-size: 35px;
-  line-height: 45px;
+  font-size: clamp(24px, 4vw, 35px);
+  line-height: clamp(34px, 5vw, 45px);
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: clamp(10px, 2vw, 20px);
 }
 .subscribe .subscribe-box .subscribe-text p {
   color: #4F5665;
@@ -666,7 +761,7 @@ body {
   color: #FFFFFF;
   border: none;
   border-radius: 10px;
-  padding: 17px 65px;
+  padding: 17px clamp(40px, 5vw, 65px);
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -679,26 +774,21 @@ body {
 }
 
 @media (max-width: 992px) {
-  .subscribe {
-    margin-bottom: -150px;
-  }
   .subscribe .subscribe-box {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
-    padding: 40px;
-  }
-  .subscribe .subscribe-box h2 {
-    font-size: 28px;
+    gap: clamp(20px, 4vw, 30px);
+    padding: 40px 20px;
   }
 }
 .footer {
   background: #F8F8F8;
-  padding: 180px 0 100px;
+  padding: clamp(100px, 15vw, 180px) 0 100px;
 }
 .footer .footer-container {
   display: flex;
   justify-content: space-between;
+  gap: clamp(30px, 5vw, 50px);
 }
 .footer .footer-info {
   max-width: 340px;
@@ -706,7 +796,7 @@ body {
 .footer .footer-info .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(5px, 1vw, 10px);
   margin-bottom: 20px;
 }
 .footer .footer-info .logo img {
@@ -723,7 +813,7 @@ body {
 }
 .footer .footer-info .social-links {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   margin-bottom: 30px;
 }
 .footer .footer-info .social-links .social-item {
@@ -753,13 +843,13 @@ body {
 }
 .footer .footer-links {
   display: flex;
-  gap: 120px;
+  gap: clamp(40px, 8vw, 120px);
 }
 .footer .footer-links .link-column h4 {
   color: #0B132A;
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: clamp(15px, 3vw, 30px);
 }
 .footer .footer-links .link-column ul {
   list-style: none;
@@ -778,9 +868,12 @@ body {
 }
 
 @media (max-width: 992px) {
+  .footer {
+    padding-top: 100px;
+  }
   .footer-container {
     flex-direction: column;
-    gap: 50px;
+    gap: clamp(40px, 6vw, 50px);
     text-align: center;
   }
   .footer-info {
@@ -794,6 +887,6 @@ body {
   }
   .footer-links {
     justify-content: center;
-    gap: 50px;
+    gap: clamp(30px, 5vw, 50px);
   }
 }

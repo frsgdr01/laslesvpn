@@ -1,15 +1,15 @@
 .testimonials {
-  padding: 80px 0;
+  padding: clamp(40px, 8vw, 80px) 0;
   background: #FFFFFF;
 
   .testimonials-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: clamp(30px, 6vw, 60px);
     h2 { 
-      font-size: 35px; 
+      font-size: clamp(26px, 4vw, 35px); 
       color: #0B132A; 
       font-weight: 700;
-      line-height: 50px;
+      line-height: clamp(36px, 5vw, 50px);
       margin-bottom: 20px;
     }
     p { 
@@ -17,6 +17,7 @@
       max-width: 555px; 
       margin: 0 auto; 
       line-height: 30px;
+      font-size: 16px;
     }
   }
 
@@ -30,15 +31,14 @@
   .testimonials-wrapper {
     display: flex;
     justify-content: flex-start; 
-    gap: 30px;
-    margin-bottom: 60px;
+    gap: clamp(15px, 3vw, 30px);
+    margin-bottom: clamp(30px, 6vw, 60px);
     transition: transform 0.5s ease-in-out; 
     will-change: transform;
   }
 
   .testimonial-item {
-    flex: 0 0 400px; 
-    width: 400px;
+    flex: 0 0 clamp(300px, 80vw, 400px); 
     min-width: 0; 
   }
 
@@ -46,7 +46,7 @@
     background: #FFFFFF;
     border: 2px solid #EEEFF2;
     border-radius: 10px;
-    padding: 30px;
+    padding: clamp(20px, 3vw, 30px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@
       .user-info {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: clamp(10px, 2vw, 20px);
         img { 
           width: 50px; 
           height: 50px; 
@@ -83,6 +83,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        font-size: 16px;
         &::after { 
           content: '★'; 
           color: #FEA250; 
@@ -102,6 +103,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 
     .custom-pagination {
       display: flex;
@@ -115,7 +118,7 @@
         transition: 0.3s;
       }
       .dot.active { 
-        width: 45px; 
+        width: clamp(30px, 5vw, 45px); 
         background: #F53838; 
         border-radius: 10px; 
       }
@@ -123,29 +126,39 @@
 
     .custom-buttons {
       display: flex;
-      gap: 20px;
+      gap: clamp(10px, 2vw, 20px);
       .btn {
-        width: 60px; 
-        height: 60px; 
+        width: clamp(50px, 6vw, 60px); 
+        height: clamp(50px, 6vw, 60px); 
+        background: transparent;
         border: 2px solid #F53838; 
         border-radius: 50%;
         display: flex; 
         align-items: center; 
         justify-content: center;
-        color: #F53838; 
-        font-size: 24px; 
         cursor: pointer;
         transition: 0.3s;
 
-        &:hover {
-            opacity: 0.7;
+        img {
+          width: 20px;
+          filter: brightness(0) saturate(100%) invert(35%) sepia(87%) saturate(4529%) hue-rotate(345deg) brightness(101%) contrast(94%);
+          transition: 0.3s;
         }
-        
-        &.next { 
-          background: #F53838; 
-          color: #fff; 
+
+        &:hover {
+          background: #F53838;
+          img {
+            filter: brightness(0) invert(1);
+          }
         }
       }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .testimonials-controls {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }

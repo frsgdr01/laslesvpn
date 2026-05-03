@@ -1,10 +1,11 @@
 .footer {
   background: #F8F8F8;
-  padding: 180px 0 100px;
+  padding: clamp(100px, 15vw, 180px) 0 100px;
 
   .footer-container {
     display: flex;
     justify-content: space-between;
+    gap: clamp(30px, 5vw, 50px);
   }
 
   .footer-info {
@@ -13,7 +14,7 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: clamp(5px, 1vw, 10px);
       margin-bottom: 20px;
       img { width: 35px; }
       span { font-size: 20px; color: #0B132A; }
@@ -27,7 +28,7 @@
 
     .social-links {
       display: flex;
-      gap: 20px;
+      gap: clamp(10px, 2vw, 20px);
       margin-bottom: 30px;
 
       .social-item {
@@ -63,14 +64,14 @@
 
   .footer-links {
     display: flex;
-    gap: 120px;
+    gap: clamp(40px, 8vw, 120px);
 
     .link-column {
       h4 {
         color: #0B132A;
         font-size: 18px;
         font-weight: 500;
-        margin-bottom: 30px;
+        margin-bottom: clamp(15px, 3vw, 30px);
       }
 
       ul {
@@ -93,9 +94,12 @@
 }
 
 @media (max-width: 992px) {
+  .footer {
+    padding-top: 100px;
+  }
   .footer-container {
     flex-direction: column;
-    gap: 50px;
+    gap: clamp(40px, 6vw, 50px);
     text-align: center;
   }
   .footer-info {
@@ -105,6 +109,6 @@
   }
   .footer-links {
     justify-content: center;
-    gap: 50px;
+    gap: clamp(30px, 5vw, 50px);
   }
 }

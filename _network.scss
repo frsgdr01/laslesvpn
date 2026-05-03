@@ -1,12 +1,12 @@
 .network {
-  padding: 80px 0;
+  padding: clamp(40px, 8vw, 80px) 0;
   text-align: center;
 
   .network-header {
-    margin-bottom: 100px;
+    margin-bottom: clamp(50px, 10vw, 100px);
     
     h2 {
-      font-size: 35px;
+      font-size: clamp(24px, 4vw, 35px);
       font-weight: 700;
       color: $black;
       margin-bottom: 20px;
@@ -22,7 +22,7 @@
   }
 
   .network-map {
-    margin-bottom: 80px;
+    margin-bottom: clamp(40px, 8vw, 80px);
     img {
       width: 100%;
       height: auto;
@@ -35,13 +35,13 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 60px 80px;
+    gap: clamp(30px, 5vw, 60px) clamp(40px, 8vw, 80px);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     
     img {
-      height: 60px;
+      height: clamp(40px, 6vw, 60px);
       width: auto;      
       flex-shrink: 0;
       object-fit: contain;   
